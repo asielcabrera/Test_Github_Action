@@ -1,4 +1,3 @@
-
 name: Ejecutar aplicación de línea de comandos Swift
 description: Esta acción ejecuta una aplicación de línea de comandos Swift
 
@@ -19,12 +18,19 @@ runs:
         # Si estás en macOS, puedes usar el siguiente comando para instalar Swift
         # brew install swift
         
-    #    - name: Clonar repositorio
-    # run: |
-#    git clone https://github.com/tu-usuario/tu-repositorio.git
-         # Opcionalmente, puedes copiar tu código Swift directamente aquí en lugar de clonar un repositorio
+      shell: bash
+      
+    - name: Clonar repositorio
+      run: |
+        git clone https://github.com/asielcabrera/Test_Github_Action.git
+      # Opcionalmente, puedes copiar tu código Swift directamente aquí en lugar de clonar un repositorio
+        
+      shell: bash
         
     - name: Compilar y ejecutar
-      run: | 
+      run: |
+        cd Test_Github_Action
         swift build
         .build/debug/Test_Github_Action ${{ inputs.arguments }}
+        
+      shell: bash
