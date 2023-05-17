@@ -57,5 +57,21 @@ public struct Core {
     // Agrega aquí otras funcionalidades según sea necesario
 }
 
-var input = Core.getInput(name: "test")
-print(input ?? "test")
+let myInput = Core.getInput(name: "myInput")
+print("Valor de myInput: \(myInput ?? "N/A")")
+
+// Obtener una entrada booleana
+let isDebug = Core.getBooleanInput(name: "debug")
+print("¿Es modo de depuración? \(isDebug)")
+
+// Establecer el valor de una salida
+Core.setOutput(name: "myOutput", value: "Hello, world!")
+
+// Establecer un valor secreto y sensible
+Core.setSecret(name: "mySecret", value: "s3cr3t")
+
+// Imprimir un mensaje de depuración
+Core.debug(message: "Esto es un mensaje de depuración")
+
+// Indicar que la acción ha fallado
+Core.setFailed(message: "Algo salió mal. La acción ha fallado.")

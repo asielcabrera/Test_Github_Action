@@ -7,6 +7,13 @@ inputs:
     description: 'Descripción de la entrada myInput'
     required: true
     default: 'Valor predeterminado para myInput'
+  optionalInput:
+    description: 'Descripción de la entrada optionalInput'
+    required: false
+    default: 'Valor predeterminado para optionalInput'
+outputs:
+  myOutput:
+    description: 'Descripción de la salida myOutput'
 
 runs:
   using: 'composite'
