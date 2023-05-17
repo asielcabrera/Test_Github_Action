@@ -25,17 +25,17 @@ runs:
         
       shell: bash
       
-    #- name: Clonar repositorio
-      #run: |
-        #git clone https://github.com/asielcabrera/Test_Github_Action.git
+    - name: Clonar repositorio
+      run: |
+        git clone https://github.com/asielcabrera/Test_Github_Action.git
       # Opcionalmente, puedes copiar tu código Swift directamente aquí en lugar de clonar un repositorio
         
-      # shell: bash
+      shell: bash
         
     - name: Compilar y ejecutar
       run: |
         ls
-        # cd Test_Github_Action
+        cd Test_Github_Action
         swift build
         .build/debug/Test_Github_Action ${{ inputs.arguments }}
         
