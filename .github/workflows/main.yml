@@ -16,5 +16,5 @@ jobs:
     - name: Ejecutar la acción personalizada
       uses: asielcabrera/Test_Github_Action@v8.1
       with:
-          myInput: 'Hello, world! '
+        myInput: 'Hello, world! '
         
