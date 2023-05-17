@@ -66,14 +66,14 @@ let myInput = Core.getInput(name: "myInput")
 print("Valor de myInput: \(myInput ?? "N/A")")
 
 // Obtener una entrada booleana
-let isDebug = Core.getBooleanInput(name: "debug")
-print("¿Es modo de depuración? \(isDebug)")
+//let isDebug = Core.getBooleanInput(name: "debug")
+//print("¿Es modo de depuración? \(isDebug)")
 
 // Establecer el valor de una salida
 Core.setOutput(name: "myOutput", value: "Hello, world!")
 
 // Establecer un valor secreto y sensible
-Core.setSecret(name: "mySecret", value: "s3cr3t")
+//Core.setSecret(name: "mySecret", value: "s3cr3t")
 
 // let secret = Core.getSecret(name: "mySecret")
 
