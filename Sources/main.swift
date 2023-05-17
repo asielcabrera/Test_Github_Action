@@ -1,3 +1,4 @@
+import Foundation 
 public struct Core {
     public static func getInput(name: String, options: InputOptions = .init()) -> String? {
         let inputKey = "INPUT_\(name.uppercased())"
@@ -56,5 +57,5 @@ public struct Core {
     // Agrega aquí otras funcionalidades según sea necesario
 }
 
-var input = Core.getInput("TEST")
+var input = Core.getInput(name: "TEST")
 print(input ?? "test fallado")
