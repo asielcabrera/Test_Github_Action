@@ -1,12 +1,13 @@
 name: Ejecutar aplicación de línea de comandos Swift
 description: Esta acción ejecuta una aplicación de línea de comandos Swift
+author: 'Asiel Cabrera'
 
 inputs:
   myInput:
-    description: 'TEst de Core'
+    description: 'Descripción de la entrada myInput'
     required: true
-    default: ''
-    
+    default: 'Valor predeterminado para myInput'
+
 runs:
   using: 'composite'
   steps:
