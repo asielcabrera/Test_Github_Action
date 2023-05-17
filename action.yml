@@ -2,11 +2,6 @@ name: Ejecutar aplicación de línea de comandos Swift
 description: Esta acción ejecuta una aplicación de línea de comandos Swift
 
 inputs:
-   arguments:
-    description: 'Argumentos para pasar a la aplicación'
-    required: false
-    default: ''
-    
   myInput:
     description: 'TEst de Core'
     required: true
@@ -27,7 +22,7 @@ runs:
       
     - name: Clonar repositorio
       run: |
-        git clone https://github.com/asielcabrera/Test_Github_Action.git
+         git clone https://github.com/asielcabrera/Test_Github_Action.git
       # Opcionalmente, puedes copiar tu código Swift directamente aquí en lugar de clonar un repositorio
         
       shell: bash
