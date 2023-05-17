@@ -5,7 +5,6 @@ public struct Core {
         let defaultValue = options.defaultValue
         
         if let value = ProcessInfo.processInfo.environment[inputKey], !value.isEmpty {
-            print(value)
             return value
         }
         
@@ -16,7 +15,7 @@ public struct Core {
         if options.required {
             fatalError("Input '\(name)' is required but not provided.")
         }
-        print(value)
+        
         return nil
     }
     
@@ -59,4 +58,4 @@ public struct Core {
 }
 
 var input = Core.getInput(name: "myInput")
-print(input)
+print(input ?? "test")
