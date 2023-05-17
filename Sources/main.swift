@@ -57,5 +57,5 @@ public struct Core {
     // Agrega aquí otras funcionalidades según sea necesario
 }
 
-var input = Core.getInput(name: "myInput")
+var input = Core.getInput(name: "test")
 print(input ?? "test")
