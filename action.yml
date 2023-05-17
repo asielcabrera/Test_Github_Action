@@ -37,7 +37,6 @@ runs:
         
     - name: Compilar y ejecutar
       run: |
-        ls
         cd Test_Github_Action
         swift build
         .build/debug/Test_Github_Action ${{ inputs.arguments }}
