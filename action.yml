@@ -6,7 +6,10 @@ inputs:
     description: 'Argumentos para pasar a la aplicación'
     required: false
     default: ''
-
+  TEST:
+    description: 'TEst de Core'
+    required: true
+    default: ''
 runs:
   using: 'composite'
   steps:
