@@ -58,4 +58,4 @@ public struct Core {
 }
 
 var input = Core.getInput(name: "myInput")
-print(input ?? "test fallado"])
+print(input ?? "test fallado")
