@@ -51,4 +51,4 @@ runs:
     
     - name: test output
       run: echo ${{ steps.comandexec.outputs.myOutput }}
-      
+      shell: bash
