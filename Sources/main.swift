@@ -43,7 +43,7 @@ public struct Core {
             }
 
         
-        _ = exec("/bin/sh", "-c", " echo \"\(name)=\(value) >> $GITHUB_OUTPUT\"")
+        _ = exec("/bin/sh", "-c", " echo \"\(name)=\(value)\" >> $GITHUB_OUTPUT")
     }
     
     public static func setFailed(message: String) {
