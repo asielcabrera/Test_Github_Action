@@ -20,7 +20,7 @@ runs:
   steps:
   
     - name: Prueba
-      run: echo Hello ${{ inputs.myInput }}
+      run: printenv
       shell: bash
   
     - name: Instalar Swift
