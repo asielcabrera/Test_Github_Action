@@ -41,6 +41,8 @@ runs:
       shell: bash
         
     - name: Compilar y ejecutar
+      env:
+        INPUT_MYINPUT: ${{ inputs.myInput }}
       run: |
         cd Test_Github_Action
         swift build
