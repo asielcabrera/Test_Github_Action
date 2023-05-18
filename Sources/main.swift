@@ -4,11 +4,7 @@ public struct Core {
         let inputKey = "INPUT_\(name.uppercased())"
         let defaultValue = options.defaultValue
         
-        let proccess = Process()
-        
-//        print(proccess.environment!)
-        
-        if let value = proccess.environment?[inputKey], !value.isEmpty {
+        if let value = ProcessInfo.processInfo.environment[inputKey], !value.isEmpty {
             return value
         }
         

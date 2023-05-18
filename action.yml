@@ -41,8 +41,6 @@ runs:
       env:
         INPUT_NAME: ${{ inputs.name }}
       run: |
-        echo $INPUT_NAME
-        printenv
         cd Test_Github_Action
         swift build
         .build/debug/Test_Github_Action 
