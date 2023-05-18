@@ -28,7 +28,22 @@ public struct Core {
     }
     
     public static func setOutput(name: String, value: String) {
-        print("::set-output name=\(name)::\(value)")
+//        print("::set-output name=\(name)::\(value)")
+        
+//        echo "{name}={value}" >> $GITHUB_OUTPUT
+        
+        func exec(_ path: String, _ args: String...) -> Int32 {
+                let task = Process()
+                    task.launchPath = path
+                    task.arguments = args
+                    task.launch()
+                    task.waitUntilExit()
+                
+                return task.terminationStatus
+            }
+
+        
+        _ = exec("/bin/sh", "-c", " echo \"\(name)=\(value) >> $GITHUB_OUTPUT")
     }
     
     public static func setFailed(message: String) {
