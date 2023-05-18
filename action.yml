@@ -11,6 +11,8 @@ inputs:
     description: 'Descripción de la entrada optionalInput'
     required: false
     default: 'Valor predeterminado para optionalInput'
+  name:
+    required: true
 outputs:
   myOutput:
     description: 'Descripción de la salida myOutput'
@@ -42,10 +44,10 @@ runs:
         
     - name: Compilar y ejecutar
       env:
-        INPUT_MYINPUT: ${{ inputs.myInput }}
+        INPUT_NAME: ${{ inputs.name }}
       run: |
         cd Test_Github_Action
         swift build
-        .build/debug/Test_Github_Action ${{ inputs.arguments }}
+        .build/debug/Test_Github_Action 
         
       shell: bash

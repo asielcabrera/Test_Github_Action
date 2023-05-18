@@ -61,5 +61,5 @@ public struct Core {
     // Agrega aquí otras funcionalidades según sea necesario
 }
 
-let myInput = Core.getInput(name: "myInput")
-print("Valor de myInput: \(myInput ?? "N/A")")
+let myInput = Core.getInput(name: "name")
+print("Valor de name: \(myInput ?? "N/A")")
