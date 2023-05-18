@@ -28,20 +28,21 @@ public struct Core {
     }
     
     public static func setOutput(name: String, value: String) {
-//        print("::set-output name=\(name)::\(value)")
+        //        print("::set-output name=\(name)::\(value)")
         
-//        echo "{name}={value}" >> $GITHUB_OUTPUT
+        //        echo "{name}={value}" >> $GITHUB_OUTPUT
         
         func exec(_ path: String, _ args: String...) throws -> Int32 {
-                let task = Process()
-                    task.launchPath = path
-                    task.arguments = args
-                    try task.run()
-                    task.waitUntilExit()
-                
-                return task.terminationStatus
-            }
-
+            let task = Process()
+            //                    task.launchPath = path
+            task.executableURL = URL(fileURLWithPath: path)
+            task.arguments = args
+            try task.run()
+            task.waitUntilExit()
+            
+            return task.terminationStatus
+        }
+        
         
         _ = try? exec("/bin/sh", "-c", " echo \"\(name)=\(value)\" >> $GITHUB_OUTPUT")
     }
