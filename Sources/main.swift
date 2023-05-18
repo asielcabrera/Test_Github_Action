@@ -32,18 +32,18 @@ public struct Core {
         
 //        echo "{name}={value}" >> $GITHUB_OUTPUT
         
-        func exec(_ path: String, _ args: String...) -> Int32 {
+        func exec(_ path: String, _ args: String...) throws -> Int32 {
                 let task = Process()
-                    task.launchPath = path
+            task.executableURL = URL(string: path)
                     task.arguments = args
-                    task.launch()
+                    try task.run()
                     task.waitUntilExit()
                 
                 return task.terminationStatus
             }
 
         
-        _ = exec("/bin/sh", "-c", " echo \"\(name)=\(value)\" >> $GITHUB_OUTPUT")
+        _ = try? exec("/bin/sh", "-c", " echo \"\(name)=\(value)\" >> $GITHUB_OUTPUT")
     }
     
     public static func setFailed(message: String) {
