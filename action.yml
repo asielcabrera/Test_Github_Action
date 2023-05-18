@@ -20,7 +20,7 @@ runs:
   steps:
   
     - name: Prueba
-      run: printenv
+      run: echo $INPUT_MYINPUT
       shell: bash
   
     - name: Instalar Swift

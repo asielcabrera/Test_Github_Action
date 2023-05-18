@@ -6,8 +6,7 @@ public struct Core {
         
         let proccess = Process()
         
-        proccess.environment?[inputKey] = "Hola MUndo"
-        print("hola")
+//        print(proccess.environment!)
         
         if let value = proccess.environment?[inputKey], !value.isEmpty {
             return value
