@@ -38,6 +38,7 @@ runs:
       shell: bash
         
     - name: Compilar y ejecutar
+      id: comandexec
       env:
         INPUT_NAME: ${{ inputs.name }}
         INPUT_MYINPUT: ${{ inputs.myInput }}
@@ -47,4 +48,7 @@ runs:
         .build/debug/Test_Github_Action 
         
       shell: bash
+    
+    - name: test output
+      run: echo ${{ steps.comandexec.outputs.myOutput }}
       

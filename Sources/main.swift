@@ -23,6 +23,7 @@ public struct Core {
         guard let value = getInput(name: name, options: options) else {
             return false
         }
+        
         return ["true", "1", "yes", "on"].contains(value.lowercased())
     }
     
@@ -59,3 +60,5 @@ public struct Core {
 
 let myInput = Core.getInput(name: "myInput")
 print("Valor de name: \(myInput ?? "N/A")")
+
+Core.setOutput(name: "myOutput", value: "test output")
