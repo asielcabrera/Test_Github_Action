@@ -34,7 +34,7 @@ public struct Core {
         
         func exec(_ path: String, _ args: String...) throws -> Int32 {
                 let task = Process()
-            task.executableURL = URL(string: path)
+                    task.launchPath = path
                     task.arguments = args
                     try task.run()
                     task.waitUntilExit()
