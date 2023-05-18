@@ -20,11 +20,6 @@ outputs:
 runs:
   using: 'composite'
   steps:
-  
-    - name: Prueba
-      run: echo $INPUT_MYINPUT
-      shell: bash
-  
     - name: Instalar Swift
       run: |
         sudo apt-get update
@@ -50,4 +45,10 @@ runs:
         swift build
         .build/debug/Test_Github_Action 
         
+      shell: bash
+      
+    - name: Prueba
+      run:  |
+        echo $INPUT_NAME
+        printenv
       shell: bash
