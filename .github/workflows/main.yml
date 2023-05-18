@@ -17,5 +17,6 @@ jobs:
       uses: asielcabrera/Test_Github_Action@main
       with:
           myInput: 'Hello, world!'
+          name: 'asiel cabrera'
           optionalInput: 'Optional value'
         
