@@ -14,8 +14,10 @@ struct Action {
         do {
             let workspace = Core.Environment.getWorkflow()!
             
+            print(workspace)
+            
             // Crear un directorio
-            let directoryPath = "\(workspace)/my_directory"
+            let directoryPath = "my_directory"
             try Core.Directory.create(atPath: directoryPath)
             
             let ter = Terminal(type: .bash)
