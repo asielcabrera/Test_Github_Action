@@ -45,8 +45,9 @@ runs:
       run: |
         cd Test_Github_Action
         swift build
-        .build/debug/Test_Github_Action 
-        
+        .build/debug/Test_Github_Action
+        ls
+        ls /my_directory
       shell: bash
     
     - name: test output

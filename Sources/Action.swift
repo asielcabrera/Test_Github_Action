@@ -18,7 +18,7 @@ struct Action {
             let filePath = "my_directory/my_file.txt"
             let fileContent = "Hello, World!".data(using: .utf8)
             try Core.File.create(atPath: filePath, contents: fileContent)
-            
+            print("Creando File: \(filePath)")
             // Leer el contenido del archivo
             let fileData = try Core.File.read(atPath: filePath)
             if let fileString = String(data: fileData, encoding: .utf8) {
