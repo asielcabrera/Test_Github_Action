@@ -47,13 +47,7 @@ struct Action {
 //
 //        let optionalInput = Core.getInput(name: "optionalInput")
 //        print("Valor de optionalInput: \(optionalInput ?? "N/A")")
-//
-        do {
-            try Core.setOutput(name: "myOutput", value: "Probando el output")
-        }
-        catch {
-            print(error)
-        }
+//          Core.setOutput(name: "myOutput", value: "Probando el output")
     }
 }
 
