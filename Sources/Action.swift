@@ -6,16 +6,18 @@
 //
 
 import Core
-import Foundation
+import Terminal
 
 @main
 struct Action {
-    static func main() {
+    static func main() async {
         do {
 
             // Crear un directorio
             try Core.Directory.create(atPath: "my_directory")
-            
+            let ter = Terminal(type: .bash)
+            try ter.execute("ls")
+            try ter.execute("pwd")
             // Crear un archivo dentro del directorio
             let filePath = "my_directory/my_file.txt"
             let fileContent = "Hello, World!".data(using: .utf8)
