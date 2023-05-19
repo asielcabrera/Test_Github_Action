@@ -16,7 +16,14 @@ struct Action {
             // Crear un directorio
             try Core.Directory.create(atPath: "my_directory")
             let ter = Terminal(type: .bash)
-            try ter.execute("ls")
+            ter.execute("ls", completion: { res, err in
+                print("result ls: \(res)")
+                print("error: \(err)")
+            })
+            ter.execute("pwd", completion: { res, err in
+                print("result pwd: \(res)")
+                print("error: \(err)")
+            })
             try ter.execute("pwd")
             // Crear un archivo dentro del directorio
             let filePath = "my_directory/my_file.txt"
