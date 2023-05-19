@@ -11,23 +11,19 @@ import Terminal
 @main
 struct Action {
     static func main() async {
-        do {
-            let workspace = Core.Environment.getWorkflow()!
-            
-            print(workspace)
-            
+//        do {
+
             // Crear un directorio
-            let directoryPath = "my_directory"
-            try Core.Directory.create(atPath: directoryPath)
-            
-            
-            
-//             Crear un archivo dentro del directorio
-            let filePath = "\(directoryPath)/my_file.txt"
-            let fileContent = "Hello, World!".data(using: .utf8)
-            try Core.File.create(atPath: filePath, contents: fileContent)
-            let ter = Terminal(type: .bash)
-            print(try ter.execute("ls my_directory"))
+//            let directoryPath = "my_directory"
+//            try Core.Directory.create(atPath: directoryPath)
+//
+//
+//
+////             Crear un archivo dentro del directorio
+//            let filePath = "\(directoryPath)/my_file.txt"
+//            let fileContent = "Hello, World!".data(using: .utf8)
+//            try Core.File.create(atPath: filePath, contents: fileContent)
+         
 //            // Leer el contenido del archivo
 //            let fileData = try Core.File.read(atPath: filePath)
 //            if let fileString = String(data: fileData, encoding: .utf8) {
@@ -43,16 +39,16 @@ struct Action {
 //            // Eliminar el directorio y su contenido
 //            try Core.Directory.delete(atPath: directoryPath)
 //            try Core.Directory.delete(atPath: newDirectoryPath)
-        } catch {
-            print("Error: \(error)")
-        }
+//        } catch {
+//            print("Error: \(error)")
+//        }
 //        let myInput = Core.getInput(name: "myInput")
 //        print("Valor de name: \(myInput ?? "N/A")")
 //
 //        let optionalInput = Core.getInput(name: "optionalInput")
 //        print("Valor de optionalInput: \(optionalInput ?? "N/A")")
 //
-//        Core.setOutput(name: "myOutput", value: "Probando el output")
+        Core.setOutput(name: "myOutput", value: "Probando el output")
     }
 }
 
