@@ -6,15 +6,16 @@ import PackageDescription
 let package = Package(
     name: "Test_Github_Action",
     
-    dependencies: [.package(url: "https://github.com/asielcabrera/github-toolkit.git", from: "0.0.1")],
+    dependencies: [
+        .package(url: "https://github.com/asielcabrera/github-toolkit.git", from: "0.0.1")
+    ],
     
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .executableTarget(
             name: "Test_Github_Action",
             dependencies: [
-                .product(name: "Core", package: "github-toolkit")
+                .product(name: "Core", package: "github-toolkit"),
+                .product(name: "Github", package: "github-toolkit")
             ],
             path: "Sources"),
     ]
