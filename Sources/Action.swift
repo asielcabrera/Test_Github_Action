@@ -17,7 +17,10 @@ struct Action {
                     // Crear un directorio
                     let directoryPath = "\(workspace)/my_directory"
                     try Core.Directory.create(atPath: directoryPath)
-                    
+                        
+            let ter = Terminal(type: .bash)
+            print(try ter.execute("ls"))
+            
                     // Crear un archivo dentro del directorio
                     let filePath = "\(directoryPath)/my_file.txt"
                     let fileContent = "Hello, World!".data(using: .utf8)
