@@ -20,14 +20,14 @@ struct Action {
             let directoryPath = "my_directory"
             try Core.Directory.create(atPath: directoryPath)
             
-            let ter = Terminal(type: .bash)
-            print(try ter.execute("ls"))
             
-            // Crear un archivo dentro del directorio
-//            let filePath = "\(directoryPath)/my_file.txt"
-//            let fileContent = "Hello, World!".data(using: .utf8)
-//            try Core.File.create(atPath: filePath, contents: fileContent)
-//
+            
+//             Crear un archivo dentro del directorio
+            let filePath = "\(directoryPath)/my_file.txt"
+            let fileContent = "Hello, World!".data(using: .utf8)
+            try Core.File.create(atPath: filePath, contents: fileContent)
+            let ter = Terminal(type: .bash)
+            print(try ter.execute("ls my_directory"))
 //            // Leer el contenido del archivo
 //            let fileData = try Core.File.read(atPath: filePath)
 //            if let fileString = String(data: fileData, encoding: .utf8) {
