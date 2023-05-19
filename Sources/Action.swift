@@ -12,42 +12,35 @@ import Terminal
 struct Action {
     static func main() async {
         do {
-
-            // Crear un directorio
-            try Core.Directory.create(atPath: "my_directory")
-            let ter = Terminal(type: .bash)
-            ter.execute("ls", completion: { res, err in
-                print("result ls: \(res)")
-                print("error: \(err)")
-            })
-            ter.execute("pwd", completion: { res, err in
-                print("result pwd: \(res)")
-                print("error: \(err)")
-            })
-            try ter.execute("pwd")
-            // Crear un archivo dentro del directorio
-            let filePath = "my_directory/my_file.txt"
-            let fileContent = "Hello, World!".data(using: .utf8)
-            try Core.File.create(atPath: filePath, contents: fileContent)
-            print("Creando File: \(filePath)")
-            // Leer el contenido del archivo
-            let fileData = try Core.File.read(atPath: filePath)
-            if let fileString = String(data: fileData, encoding: .utf8) {
-                print("Contenido del archivo: \(fileString)")
-            }
-            
-            // Mover el archivo a otro directorio
-            let newDirectoryPath = "new_directory"
-            try Core.Directory.create(atPath: newDirectoryPath)
-            let newFilePath = "\(newDirectoryPath)/my_file.txt"
-            try Core.Directory.moveItem(atPath: filePath, toPath: newFilePath)
-            
-            // Eliminar el directorio y su contenido
-            try Core.Directory.delete(atPath: "my_directory")
-            try Core.Directory.delete(atPath: newDirectoryPath)
-        } catch {
-            print("Error: \(error)")
-        }
+                    let workspace = Core.Environment.getWorkflow()!
+                    
+                    // Crear un directorio
+                    let directoryPath = "\(workspace)/my_directory"
+                    try Core.Directory.create(atPath: directoryPath)
+                    
+                    // Crear un archivo dentro del directorio
+                    let filePath = "\(directoryPath)/my_file.txt"
+                    let fileContent = "Hello, World!".data(using: .utf8)
+                    try Core.File.create(atPath: filePath, contents: fileContent)
+                    
+                    // Leer el contenido del archivo
+                    let fileData = try Core.File.read(atPath: filePath)
+                    if let fileString = String(data: fileData, encoding: .utf8) {
+                        print("Contenido del archivo: \(fileString)")
+                    }
+                    
+                    // Mover el archivo a otro directorio
+                    let newDirectoryPath = "\(workspace)/new_directory"
+                    try Core.Directory.create(atPath: newDirectoryPath)
+                    let newFilePath = "\(newDirectoryPath)/my_file.txt"
+//                    try Core.File.moveItem(atPath: filePath, toPath: newFilePath)
+                    
+                    // Eliminar el directorio y su contenido
+                    try Core.Directory.delete(atPath: directoryPath)
+                    try Core.Directory.delete(atPath: newDirectoryPath)
+                } catch {
+                    print("Error: \(error)")
+                }
         let myInput = Core.getInput(name: "myInput")
         print("Valor de name: \(myInput ?? "N/A")")
         
