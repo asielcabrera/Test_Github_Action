@@ -47,7 +47,9 @@ struct Action {
 //
 //        let optionalInput = Core.getInput(name: "optionalInput")
 //        print("Valor de optionalInput: \(optionalInput ?? "N/A")")
-          Core.Outputs.setOutput(name: "myOutput", value: "Probando el output ")
+//        Core.Outputs
+        Core.Outputs.setOutput(name: "myOutput", value: "Probando el output")
+//        Core.Outputs.setOutput(name: "myOutput", value: "Probando el output ")
     }
 }
 
