@@ -13,7 +13,7 @@ struct Action {
     static func main() async {
 //        do {
 
-            // Crear un directorio
+            // Create a directory
 //            let directoryPath = "my_directory"
 //            try Core.Directory.create(atPath: directoryPath)
 //
@@ -27,7 +27,7 @@ struct Action {
 //            // Read the contents of the file
 //            let fileData = try Core.File.read(atPath: filePath)
 //            if let fileString = String(data: fileData, encoding: .utf8) {
-//                print("Archive: \(fileString)")
+//                print("Contenido del archivo: \(fileString)")
 //            }
 //
 //            // Move the file to another directory
@@ -46,9 +46,9 @@ struct Action {
 //        print("Name: \(myInput ?? "N/A")")
 //
 //        let optionalInput = Core.getInput(name: "optionalInput")
-//        print("OptionalInput value: \(optionalInput ?? "N/A")")
+//        print("OptionalInput: \(optionalInput ?? "N/A")")
 //        Core.Outputs
-        Core.Outputs.setOutput(name: "myOutput", value: "Probando el output")
+        Core.Outputs.setOutput(name: "myOutput", value: "Testing the output")
 //        Core.Outputs.setOutput(name: "myOutput", value: "Probando el output ")
     }
 }
