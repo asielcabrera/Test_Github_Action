@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "github-toolkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/asielcabrera/github-toolkit.git",
+      "state" : {
+        "revision" : "662c84a0c199889d2e50bf1c45c23bfb4f1479ba",
+        "version" : "0.0.11"
+      }
+    }
+  ],
+  "version" : 2
+}
