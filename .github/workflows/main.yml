@@ -16,7 +16,6 @@ jobs:
     - name: Ejecutar la acción personalizada
       uses: asielcabrera/Test_Github_Action@main
       with:
-          myInput: 'Hello, world!'
-          name: 'asiel cabrera'
+          myInput: 'Hello, Asiel Cabrera!'
           optionalInput: 'Optional value'
         
