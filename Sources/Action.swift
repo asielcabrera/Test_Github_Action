@@ -42,9 +42,9 @@ struct Action {
 //        } catch {
 //            print("Error: \(error)")
 //        }
-//        let myInput = Core.getInput(name: "myInput")
-//        print("Name: \(myInput ?? "N/A")")
-//
+       let myInput = Core.getInput(name: "myInput")
+       print("Name: \(myInput ?? "N/A")")
+
 //        let optionalInput = Core.getInput(name: "optionalInput")
 //        print("OptionalInput: \(optionalInput ?? "N/A")")
 //        Core.Outputs
