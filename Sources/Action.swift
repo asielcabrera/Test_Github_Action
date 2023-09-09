@@ -19,34 +19,34 @@ struct Action {
 //
 //
 //
-////             Crear un archivo dentro del directorio
+////             Create a file within the directory
 //            let filePath = "\(directoryPath)/my_file.txt"
 //            let fileContent = "Hello, World!".data(using: .utf8)
 //            try Core.File.create(atPath: filePath, contents: fileContent)
          
-//            // Leer el contenido del archivo
+//            // Read the contents of the file
 //            let fileData = try Core.File.read(atPath: filePath)
 //            if let fileString = String(data: fileData, encoding: .utf8) {
-//                print("Contenido del archivo: \(fileString)")
+//                print("Archive: \(fileString)")
 //            }
 //
-//            // Mover el archivo a otro directorio
+//            // Move the file to another directory
 //            let newDirectoryPath = "\(workspace)/new_directory"
 //            try Core.Directory.create(atPath: newDirectoryPath)
 //            _ = "\(newDirectoryPath)/my_file.txt"
 //            //                    try Core.File.moveItem(atPath: filePath, toPath: newFilePath)
 //
-//            // Eliminar el directorio y su contenido
+//            // Delete the directory and its contents
 //            try Core.Directory.delete(atPath: directoryPath)
 //            try Core.Directory.delete(atPath: newDirectoryPath)
 //        } catch {
 //            print("Error: \(error)")
 //        }
 //        let myInput = Core.getInput(name: "myInput")
-//        print("Valor de name: \(myInput ?? "N/A")")
+//        print("Name: \(myInput ?? "N/A")")
 //
 //        let optionalInput = Core.getInput(name: "optionalInput")
-//        print("Valor de optionalInput: \(optionalInput ?? "N/A")")
+//        print("OptionalInput value: \(optionalInput ?? "N/A")")
 //        Core.Outputs
         Core.Outputs.setOutput(name: "myOutput", value: "Probando el output")
 //        Core.Outputs.setOutput(name: "myOutput", value: "Probando el output ")
