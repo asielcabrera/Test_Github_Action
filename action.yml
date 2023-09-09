@@ -1,43 +1,39 @@
-name: Ejecutar aplicación de línea de comandos Swift
-description: Esta acción ejecuta una aplicación de línea de comandos Swift
+name: Run Swift command-line application
+description: This action executes a Swift command-line application
 author: 'Asiel Cabrera'
 
 inputs:
   myInput:
-    description: 'Descripción de la entrada myInput'
+    description: 'Description of the myInput entry'
     required: true
-    default: 'Valor predeterminado para myInput'
+    default: 'Default value for myInput'
   optionalInput:
-    description: 'Descripción de la entrada optionalInput'
+    description: 'Description of the optionalInput entry'
     required: false
-    default: 'Valor predeterminado para optionalInput'
+    default: 'Default value for optionalInput'
   name:
     required: true
 outputs:
   myOutput:
-    description: 'Descripción de la salida myOutput'
+    description: 'Description of the myOutput output'
 
 runs:
   using: 'composite'
   steps:
-    - name: Instalar Swift
+    - name: Install Swift
       run: |
         sudo apt-get update
         sudo apt-get install swift
-        
-        # Si estás en macOS, puedes usar el siguiente comando para instalar Swift
-        # brew install swift
-        
+            
       shell: bash
       
-    - name: Clonar repositorio
+    - name: Clone repository
       run: |
         git clone https://github.com/asielcabrera/Test_Github_Action.git
-      # Opcionalmente, puedes copiar tu código Swift directamente aquí en lugar de clonar un repositorio
         
       shell: bash
         
-    - name: Compilar y ejecutar
+    - name: Compile and execute
       id: comandexec
       env:
         INPUT_NAME: ${{ inputs.name }}
