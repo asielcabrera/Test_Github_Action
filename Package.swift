@@ -7,7 +7,7 @@ let package = Package(
     name: "Test_Github_Action",
     
     dependencies: [
-        .package(url: "https://github.com/asielcabrera/github-toolkit.git", from: "0.0.1"),
+        .package(url: "https://github.com/devswiftzone/github-toolkit.git", from: "0.0.1"),
     ],
     
     targets: [
